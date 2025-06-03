@@ -29,4 +29,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     // Show home by default
     document.getElementById('home').style.display = '';
+
+    // Resume link logic
+    const showResumeLink = document.getElementById('show-resume-link');
+    const backToHomeLink = document.getElementById('back-to-home-link');
+    const homeSection = document.getElementById('home');
+    const resumeSection = document.getElementById('resume-section');
+    if (showResumeLink && resumeSection && homeSection) {
+        showResumeLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            homeSection.style.display = 'none';
+            resumeSection.style.display = '';
+        });
+    }
+    if (backToHomeLink && resumeSection && homeSection) {
+        backToHomeLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            resumeSection.style.display = 'none';
+            homeSection.style.display = '';
+        });
+    }
 });
