@@ -3,26 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Dennis Hom - Homepage</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main class="profile-main">
-        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
-        <h1>Your Name</h1>
-        <div class="contact-links">
-            <a href="mailto:your.email@example.com" title="Email"><img src="https://img.icons8.com/ios-filled/50/000000/new-post.png" alt="Email"/></a>
-            <a href="https://github.com/yourusername" target="_blank" title="GitHub"><img src="https://img.icons8.com/ios-glyphs/50/000000/github.png" alt="GitHub"/></a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" title="LinkedIn"><img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn"/></a>
+    <div class="container">
+        <div class="left-column">
+            <div class="left-top">
+                <img src="images/boo.png" alt="Profile Picture" class="profile-pic">
+                <h1 class="profile-name">Dennis Hom</h1>
+                <div class="contact-icons">
+                    <a href="mailto:dryanhom@gmail.com" title="Email"><img src="https://img.icons8.com/ios-filled/32/000000/new-post.png" alt="Email"/></a>
+                    <a href="https://github.com/dennisrhom" target="_blank" title="GitHub"><img src="https://img.icons8.com/ios-glyphs/32/000000/github.png" alt="GitHub"/></a>
+                    <a href="https://www.linkedin.com/in/dennis-hom-134017237/" target="_blank" title="LinkedIn"><img src="https://img.icons8.com/ios-filled/32/000000/linkedin.png" alt="LinkedIn"/></a>
+                </div>
+                <hr class="left-divider">
+            </div>
+            <div class="left-bottom">
+                <nav class="side-nav">
+                    <a href="#home" class="active">Home</a>
+                    <a href="#education">Education</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#leadership">Leadership</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
         </div>
-        <div class="profile-buttons">
-            <a href="#" class="profile-btn">Resume</a>
-            <a href="#" class="profile-btn">Projects</a>
+        <div class="right-column">
+            <section class="about-me" id="home">
+                <h2>About Me</h2>
+                <p>
+                    Hi! I'm Dennis and I'll add more here eventually! I probably want it to be about this long (fluff fluff fluff fluff fluff fluff fluff 
+                    fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff 
+                    fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff 
+                    fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff 
+                    fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff 
+                    fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff fluff )
+                </p>
+            </section>
+            <section class="about-me" id="education" style="display:none">
+                <h2>Education</h2>
+                <p>Education details go here.</p>
+            </section>
+            <section class="about-me" id="experience" style="display:none">
+                <h2>Experience</h2>
+                <p>Experience details go here.</p>
+            </section>
+            <section class="about-me" id="leadership" style="display:none">
+                <h2>Leadership</h2>
+                <p>Leadership details go here.</p>
+            </section>
+            <section class="about-me" id="projects" style="display:none">
+                <h2>Projects</h2>
+                <p>Projects details go here.</p>
+            </section>
+            <section class="about-me" id="contact" style="display:none">
+                <h2>Contact</h2>
+                <p>Contact details go here.</p>
+            </section>
         </div>
-    </main>
-    <footer>
-        <p>&copy; 2024 Your Name</p>
-    </footer>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
