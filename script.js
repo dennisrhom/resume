@@ -16,24 +16,24 @@ document.addEventListener('DOMContentLoaded', function() {
  
 
         'EDUCATION': `
-            <h2 class="modal-header-common education-modal-header">EDUCATION</h2>
+            <h2 class="modal-header-common">EDUCATION</h2>
             <div class="education-modal-content">
-                <div class="education-modal-left">
-                    <div class="modal-label-common education-modal-label">The University of Texas at Austin</div>
-                    <div class="modal-label-common education-modal-label">Bachelors of Science in Aerospace Engineering</div>
-                    <div class="modal-label-common education-modal-label">MAY 2025</div>
-                    <div class="modal-label-common education-modal-label">GPA: 3.6</div>
+                <div class="education-text">
+                    <div class="school-name">The University of Texas at Austin</div>
+                    <div class="degree-name">Bachelors of Science in Aerospace Engineering</div>
+                    <div class="degree-name">MAY 2025</div>
+                    <div class="degree-name">GPA: 3.6</div>
                 </div>
-                <div class="education-modal-image">
-                    <img src='images/tower.svg' alt="UT Tower">
+                <div class="education-image-container">
+                    <img src='images/horn.svg' alt="UT Tower" class="education-image">
                 </div>
             </div>
         `,
         'CONTACT': `
-            <h2 class="modal-header-common contact-modal-header">CONTACT</h2>
+            <h2 class="modal-header-common">CONTACT</h2>
             <div class="contact-modal-info">
-                <div class="modal-label-common contact-modal-label">EMAIL: <a href='mailto:dryanhom@gmail.com'>DRYANHOM@GMAIL.COM</a></div>
-                <div class="modal-label-common contact-modal-label">PHONE: Please Email!</div>
+                <div class="modal-label-common1">EMAIL: <a href='mailto:dryanhom@gmail.com'>DRYANHOM@GMAIL.COM</a></div>
+                <div class="modal-label-common1">PHONE: Please Email!</div>
             </div>
             <div class="contact-modal-socials">
                 <a href='https://www.linkedin.com/in/dennis-hom-134017237/' target='_blank' class='contact-social-btn' title='LinkedIn'>
