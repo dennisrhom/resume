@@ -1,52 +1,85 @@
+
+// --- START OF FILE script.js ---
+
 document.addEventListener('DOMContentLoaded', function() {
-    const btn = document.getElementById('helloBtn');
-    if (btn) {
-        btn.addEventListener('click', function() {
-            alert('Hello! Welcome to the homepage.');
+    const modalOverlay = document.getElementById('modal-overlay');
+    const modalClose = document.getElementById('modal-close');
+    const modalBody = document.getElementById('modal-body');
+    const buttons = document.querySelectorAll('.homepage-btn'); // These are the buttons on index.html
+
+    // Section content for each button on index.html
+    const sectionContent = {
+        'ABOUT ME': `
+            <h2 class="modal-header-common">ABOUT ME</h2>
+            <p>Welcome to my homepage! I'm Dennis Hom, a student and engineer passionate about technology and discovery.</p>
+        `,
+ 
+
+        'EDUCATION': `
+            <h2 class="modal-header-common education-modal-header">EDUCATION</h2>
+            <div class="education-modal-content">
+                <div class="education-modal-left">
+                    <div class="modal-label-common education-modal-label">The University of Texas at Austin</div>
+                    <div class="modal-label-common education-modal-label">Bachelors of Science in Aerospace Engineering</div>
+                    <div class="modal-label-common education-modal-label">MAY 2025</div>
+                    <div class="modal-label-common education-modal-label">GPA: 3.6</div>
+                </div>
+                <div class="education-modal-image">
+                    <img src='images/tower.svg' alt="UT Tower">
+                </div>
+            </div>
+        `,
+        'CONTACT': `
+            <h2 class="modal-header-common contact-modal-header">CONTACT</h2>
+            <div class="contact-modal-info">
+                <div class="modal-label-common contact-modal-label">EMAIL: <a href='mailto:dryanhom@gmail.com'>DRYANHOM@GMAIL.COM</a></div>
+                <div class="modal-label-common contact-modal-label">PHONE: Please Email!</div>
+            </div>
+            <div class="contact-modal-socials">
+                <a href='https://www.linkedin.com/in/dennis-hom-134017237/' target='_blank' class='contact-social-btn' title='LinkedIn'>
+                    <img src='https://img.icons8.com/ios-filled/28/ffffff/linkedin.png' alt='LinkedIn'/>
+                </a>
+                <a href='https://twitter.com/' target='_blank' class='contact-social-btn' title='Twitter'>
+                    <img src='https://img.icons8.com/ios-filled/28/ffffff/twitter.png' alt='Twitter'/>
+                </a>
+                <a href='https://instagram.com/dennishom' target='_blank' class='contact-social-btn' title='Instagram'>
+                    <img src='https://img.icons8.com/ios-filled/28/ffffff/instagram-new.png' alt='Instagram'/>
+                </a>
+                <a href='https://github.com/dennisrhom' target='_blank' class='contact-social-btn' title='GitHub'>
+                    <img src='https://img.icons8.com/ios-glyphs/28/ffffff/github.png' alt='GitHub'/>
+                </a>
+            </div>
+        `
+    };
+
+    if (buttons.length > 0 && modalOverlay && modalBody && modalClose) {
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const sectionKey = btn.textContent.trim().toUpperCase();
+
+                if (sectionKey === 'PROJECTS') {
+                    window.location.href = 'projects.html'; // Navigate to projects.html
+                } else if (sectionContent[sectionKey]) {
+                    modalBody.innerHTML = sectionContent[sectionKey];
+                    modalOverlay.style.display = 'flex';
+                    document.body.classList.add('modal-open');
+                }
+            });
         });
-    }
+        modalClose.addEventListener('click', () => {
+            modalOverlay.style.display = 'none';
+            document.body.classList.remove('modal-open');
+        });
 
-    // Side nav click handler for single page navigation
-    const navLinks = document.querySelectorAll('.side-nav a');
-    const sections = document.querySelectorAll('.right-column .about-me');
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Remove active from all links
-            navLinks.forEach(l => l.classList.remove('active'));
-            // Add active to clicked link
-            this.classList.add('active');
-            // Hide all sections
-            sections.forEach(section => section.style.display = 'none');
-            // Show the selected section
-            const targetId = this.getAttribute('href').replace('#', '');
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                targetSection.style.display = '';
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) { // Clicked on the overlay itself, not the content
+                modalOverlay.style.display = 'none';
+                document.body.classList.remove('modal-open');
             }
         });
-    });
-    // Show home by default
-    document.getElementById('home').style.display = '';
-
-    // Resume link logic
-    const showResumeLink = document.getElementById('show-resume-link');
-    const backToHomeLink = document.getElementById('back-to-home-link');
-    const homeSection = document.getElementById('home');
-    const resumeSection = document.getElementById('resume-section');
-    if (showResumeLink && resumeSection && homeSection) {
-        showResumeLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            homeSection.style.display = 'none';
-            resumeSection.style.display = '';
-        });
-    }
-    if (backToHomeLink && resumeSection && homeSection) {
-        backToHomeLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            resumeSection.style.display = 'none';
-            homeSection.style.display = '';
-        });
+    } else {
+        // console.error("Modal elements or homepage buttons not found on this page.");
+        // This is expected on projects.html, so no error needed if we only expect this script on index.html
     }
 });
+// --- END OF FILE script.js ---
