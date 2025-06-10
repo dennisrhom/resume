@@ -9,13 +9,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Section content for each button on index.html
     const sectionContent = {
+        
         'ABOUT ME': `
             <h2 class="modal-header-common">ABOUT ME</h2>
-            <p>Welcome to my homepage! I'm Dennis Hom, a student and engineer passionate about technology and discovery.</p>
+            <p>Hello :D</p>
         `,
  
 
         'EDUCATION': `
+        
             <h2 class="modal-header-common">EDUCATION</h2>
             <div class="education-modal-content">
                 <div class="education-text">
@@ -33,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <h2 class="modal-header-common">CONTACT</h2>
             <div class="contact-modal-info">
                 <div class="modal-label-common1">EMAIL: <a href='mailto:dryanhom@gmail.com'>DRYANHOM@GMAIL.COM</a></div>
-                <div class="modal-label-common1">PHONE: Please Email!</div>
+
             </div>
             <div class="contact-modal-socials">
                 <a href='https://www.linkedin.com/in/dennis-hom-134017237/' target='_blank' class='contact-social-btn' title='LinkedIn'>
