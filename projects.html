@@ -4,79 +4,244 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Projects - Dennis Hom</title>
-    <!-- Make sure the path to your stylesheet is correct -->
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body class="projects-page-body">
     <div class="projects-container">
         <a href="index.html" class="back-link">← Back to Home</a>
         <h1 class="projects-header">My Projects</h1>
 
-        <div class="timeline">
+        <div class="timeline-wrapper">
+            <div class="timeline">
 
-            <!-- Timeline Item 1 -->
-            <div class="timeline-item">
-                <div class="timeline-node"></div>
-                <div class="timeline-content">
+                <!--  THIS WEBSITE JUNE 2025  -->
+                <div class="timeline-item">
+                    <span class="timeline-date">JUNE 2025</span>
+                    <div class="timeline-content">
+                        <div class="project-image-container">
+                            <img src="images/website.png" alt="Website Thumbnail">
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">This Website</h3>
+                            <p class="project-description">Made this website\</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/dennisrhom/resume" target="_blank" class="project-link-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.89c-2.81.61-3.4-1.35-3.4-1.35-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.6.07-.6 1.01.07 1.54 1.04 1.54 1.04.9 1.54 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.24-.25-4.6-1.12-4.6-4.99 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.88-2.36 4.73-4.6 4.99.36.31.68.92.68 1.85v2.75c0 .26.18.57.69.48C21.13 20.17 24 16.42 24 12c0-5.52-4.48-10-10-10z"/></svg>
+                                    GitHub
+                                </a>
+                                <a href="https://dennisrhom.github.io/resume/" target="_blank" class="project-link-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                                    Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  NASA SPACE-I OCT 2024 - APR 2025  -->
+                <div class="timeline-item">
                     <span class="timeline-date">OCT 2024 - APR 2025</span>
-                    <div class="project-image-container">
-                        <img src="https://placehold.co/400x200/343a40/ffffff?text=NASA+Space-I" alt="NASA Space-I Project Thumbnail">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">NASA USDC: Space I</h3>
-                        <p class="project-description">Engineered and tested a passive fluid delivery system for microgravity by analyzing capillary flow through various substrates. Developed 3D CAD models integrating ISS-heritage sensors to validate multiple configurations and document fluid dynamics.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">3D CAD Modeling</span>
-                            <span class="tech-tag">Fluid Dynamics</span>
-                            <span class="tech-tag">Data Analysis</span>
-                            <span class="tech-tag">R&D</span>
+                    <div class="timeline-content">
+                        <div class="project-image-container">
+                             <img src="https://placehold.co/400x200/343a40/ffffff?text=NASA+Space-I" alt="NASA Space-I Project Thumbnail">
                         </div>
-                        <div class="project-links">
-                            <a href="#" target="_blank" class="project-link-btn"> <!-- Add your GitHub link here -->
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.89c-2.81.61-3.4-1.35-3.4-1.35-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.6.07-.6 1.01.07 1.54 1.04 1.54 1.04.9 1.54 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.24-.25-4.6-1.12-4.6-4.99 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.88-2.36 4.73-4.6 4.99.36.31.68.92.68 1.85v2.75c0 .26.18.57.69.48C21.13 20.17 24 16.42 24 12c0-5.52-4.48-10-10-10z"/></svg>
-                                GitHub
-                            </a>
-                            <a href="https://www.nasa.gov/space-i-substrate-testing-system-for-fluid-management/" target="_blank" class="project-link-btn">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                                Learn More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Timeline Item 2 -->
-            <div class="timeline-item">
-                <div class="timeline-node"></div>
-                <div class="timeline-content">
-                     <span class="timeline-date">JUN 2023</span>
-                    <div class="project-image-container">
-                        <img src="https://placehold.co/400x200/343a40/ffffff?text=Project+2" alt="Project 2 Thumbnail">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Propeller-Thrust Optimization</h3>
-                        <p class="project-description">A detailed description of Project 2, highlighting the technologies used and challenges overcome.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Node.js</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/your-github-repo-2" target="_blank" class="project-link-btn">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.89c-2.81.61-3.4-1.35-3.4-1.35-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.6.07-.6 1.01.07 1.54 1.04 1.54 1.04.9 1.54 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.24-.25-4.6-1.12-4.6-4.99 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.88-2.36 4.73-4.6 4.99.36.31.68.92.68 1.85v2.75c0 .26.18.57.69.48C21.13 20.17 24 16.42 24 12c0-5.52-4.48-10-10-10z"/></svg>
-                                GitHub
-                            </a>
-                            <a href="#" target="_blank" class="project-link-btn">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                                Demo
-                            </a>
+                        <div class="project-info">
+                            <h3 class="project-title">NASA University Student Design Challenge: Space I</h3>
+                            <p class="project-description">Engineered and tested a passive fluid delivery system for microgravity by analyzing capillary flow through 
+                                various substrates. Developed 3D CAD models integrating ISS-heritage sensors to validate multiple configurations and document fluid dynamics.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">3D CAD</span>
+                                <span class="tech-tag">Fluid Dynamics</span>
+                                <span class="tech-tag">Data Analysis</span>
+         
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.89c-2.81.61-3.4-1.35-3.4-1.35-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.6.07-.6 1.01.07 1.54 1.04 1.54 1.04.9 1.54 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.24-.25-4.6-1.12-4.6-4.99 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.88-2.36 4.73-4.6 4.99.36.31.68.92.68 1.85v2.75c0 .26.18.57.69.48C21.13 20.17 24 16.42 24 12c0-5.52-4.48-10-10-10z"/></svg>
+                                    GitHub
+                                </a>
+                                <a href="https://www.nasa.gov/space-i-substrate-testing-system-for-fluid-management/" target="_blank" class="project-link-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                                    Learn More
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Add more timeline items here in the same format -->
 
+                <!--  MISSION DESIGN  -->
+                <div class="timeline-item">
+                    <span class="timeline-date">NOVEMBER 2024</span>
+                    <div class="timeline-content">
+                        <div class="project-image-container">
+                            <img src=" alt="Project 2 Thumbnail">
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Mission Design (W.A.L.L.E.)</h3>
+                            
+                            <p class="project-description">Designed a conceptual lunar lander mission to test plant growth in two specialized chambers under lunar gravity. 
+                                Focuses on first-order design and analysis of the Thermal Control System (TCS) and structural subsystem, with updated mass and energy 
+                                balance modeling. Uses heritage from Chandrayaan-3 and IM-1 missions, the spacecraft is launched on a Falcon 9, performs a TLI burn, 
+                                and lands in the Sea of Tranquility for a 14-day solar-powered operation. Part of ASE166M Curriculum</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Structural Analysis</span>
+                                <span class="tech-tag">Thermal Systems</span>
+                                <span class="tech-tag">Spacecraft Design</span>
+                                <span class="tech-tag">Mass Balance</span>
+
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/your-github-repo-2" target="_blank" class="project-link-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.89c-2.81.61-3.4-1.35-3.4-1.35-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.6.07-.6 1.01.07 1.54 1.04 1.54 1.04.9 1.54 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.24-.25-4.6-1.12-4.6-4.99 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.88-2.36 4.73-4.6 4.99.36.31.68.92.68 1.85v2.75c0 .26.18.57.69.48C21.13 20.17 24 16.42 24 12c0-5.52-4.48-10-10-10z"/></svg>
+                                    GitHub
+                                </a>
+                                <a href="#" target="_blank" class="project-link-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                                    Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                       
+                <!--  PROPELLER  -->
+                <div class="timeline-item">
+                    <span class="timeline-date">MAY 2024</span>
+                    <div class="timeline-content">
+                        <div class="project-image-container">
+                            <img src="images/boo.png" alt="Project 2 Thumbnail">
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Efficiency of Propeller Twist</h3>
+                            
+                            <p class="project-description">This project investigates the impact of propeller twist on propulsive efficiency using a brushless DC motor 
+                                and strain gages to measure thrust and electrical power consumption. The experiment compares two propellers with different twist angles, 
+                                analyzing their performance and efficiency. The results suggest that propellers with less twist can achieve a higher thrust-to-power ratio. 
+                                The study also highlights methods for measuring motor RPM using a photodiode and laser pointer</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">MATLAB</span>
+                                <span class="tech-tag">Electromechanical Systems</span>
+                                <span class="tech-tag">Data Analysis</span>
+                                
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/your-github-repo-2" target="_blank" class="project-link-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.89c-2.81.61-3.4-1.35-3.4-1.35-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.6.07-.6 1.01.07 1.54 1.04 1.54 1.04.9 1.54 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.24-.25-4.6-1.12-4.6-4.99 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.88-2.36 4.73-4.6 4.99.36.31.68.92.68 1.85v2.75c0 .26.18.57.69.48C21.13 20.17 24 16.42 24 12c0-5.52-4.48-10-10-10z"/></svg>
+                                    GitHub
+                                </a>
+                                <a href="#" target="_blank" class="project-link-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                                    Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--  DRAGONFLY  -->
+                <div class="timeline-item">
+                    <span class="timeline-date">MAY 2023</span>
+                    <div class="timeline-content">
+                        <div class="project-image-container">
+                            <img src=" alt="Project 2 Thumbnail">
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Dragonfly - Aerodynamic Testing of Sci-Fi Aircraft</h3>
+                            
+                            <p class="project-description">A low-speed aerodynamic study of a scale model of the "Dragonfly" aircraft from Rendezvous with Rama. 
+                                Using wind tunnel testing, the team evaluated lift and drag characteristics at various Reynolds numbers and angles of attack. 
+                                Flow visualization (smoke wands, tufts) and force measurement techniques were used to analyze aerodynamic behavior. 
+                                Results showed performance limitations in Earth's conditions, but indicated potential viability under the higher Reynolds numbers 
+                                hypothesized for the fictional planet Rama.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Aerodynamics</span>
+                                <span class="tech-tag">Wind-Tunnel Testing</span>
+                                <span class="tech-tag">Flow Visualization</span>
+                                <span class="tech-tag">Design</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/your-github-repo-2" target="_blank" class="project-link-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.89c-2.81.61-3.4-1.35-3.4-1.35-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.6.07-.6 1.01.07 1.54 1.04 1.54 1.04.9 1.54 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.24-.25-4.6-1.12-4.6-4.99 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.88-2.36 4.73-4.6 4.99.36.31.68.92.68 1.85v2.75c0 .26.18.57.69.48C21.13 20.17 24 16.42 24 12c0-5.52-4.48-10-10-10z"/></svg>
+                                    GitHub
+                                </a>
+                                <a href="#" target="_blank" class="project-link-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                                    Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                                <!--  NEXT PROJECT  -->
+                <div class="timeline-item">
+                    <span class="timeline-date">MM YYYY</span>
+                    <div class="timeline-content">
+                        <div class="project-image-container">
+                            <img src=" alt="Project 2 Thumbnail">
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">PROJECT TITLE</h3>
+                            
+                            <p class="project-description">PROJECT DESCRIPTION</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">TAG</span>
+                                <span class="tech-tag">TAG</span>
+                                <span class="tech-tag">TAG</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/your-github-repo-2" target="_blank" class="project-link-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.89c-2.81.61-3.4-1.35-3.4-1.35-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.6.07-.6 1.01.07 1.54 1.04 1.54 1.04.9 1.54 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.24-.25-4.6-1.12-4.6-4.99 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.88-2.36 4.73-4.6 4.99.36.31.68.92.68 1.85v2.75c0 .26.18.57.69.48C21.13 20.17 24 16.42 24 12c0-5.52-4.48-10-10-10z"/></svg>
+                                    GitHub
+                                </a>
+                                <a href="#" target="_blank" class="project-link-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                                    Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                       
+                                <!--  NEXT PROJECT  -->
+                <div class="timeline-item">
+                    <span class="timeline-date">MM YYYY</span>
+                    <div class="timeline-content">
+                        <div class="project-image-container">
+                            <img src=" alt="Project 2 Thumbnail">
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">PROJECT TITLE</h3>
+                            
+                            <p class="project-description">PROJECT DESCRIPTION</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">TAG</span>
+                                <span class="tech-tag">TAG</span>
+                                <span class="tech-tag">TAG</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/your-github-repo-2" target="_blank" class="project-link-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.89c-2.81.61-3.4-1.35-3.4-1.35-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.6.07-.6 1.01.07 1.54 1.04 1.54 1.04.9 1.54 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.24-.25-4.6-1.12-4.6-4.99 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.88-2.36 4.73-4.6 4.99.36.31.68.92.68 1.85v2.75c0 .26.18.57.69.48C21.13 20.17 24 16.42 24 12c0-5.52-4.48-10-10-10z"/></svg>
+                                    GitHub
+                                </a>
+                                <a href="#" target="_blank" class="project-link-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                                    Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                       
+                
+
+            </div> 
         </div> 
     </div> 
 </body>

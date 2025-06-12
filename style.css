@@ -1,4 +1,4 @@
-/* HOMEPAGE */
+/* HOMEPAGE - No Changes Needed Here */
 .homepage-bg {
     min-height: 100vh;
     margin: 0;
@@ -23,7 +23,7 @@
 .homepage-center {
     display: flex;
     flex-direction: column;
-    align-items:   center;    
+    align-items:    center;      
     justify-content: center;
     margin-top: 4vh;
     margin-bottom: 8vh;
@@ -79,7 +79,7 @@
     outline: none;
 }
 .homepage-btn:hover, .homepage-btn:focus {
-   
+    
     color: #c0bebe;
     opacity: 60%;
     border: 1.5px solid #ffffff;
@@ -157,7 +157,7 @@ body.modal-open .homepage-overlay {
     user-select: none;
 }
 
-/* === Shared Modal Components === */
+/* === Shared Modal Components - No Changes Needed Here === */
 .modal-header-common {
     position: absolute;
     top: 0.01rem;
@@ -170,7 +170,7 @@ body.modal-open .homepage-overlay {
     padding-bottom: 0.1rem;
     width: fit-content;
     text-shadow: 0 2px 16px rgba(0,0,0,0.25);
-   
+    
 }
 
 .modal-label-common1 {
@@ -191,8 +191,7 @@ body.modal-open .homepage-overlay {
     gap: 1rem;
 }
 
-/* CONTACT */
-
+/* CONTACT - No Changes Needed Here */
 .contact-modal-info {
     margin-top: 2rem;
     display: flex;
@@ -234,8 +233,7 @@ body.modal-open .homepage-overlay {
     filter: invert(1) brightness(0.3) sepia(1) hue-rotate(180deg) saturate(4);
 }
 
-/* EDUCATION */
-
+/* EDUCATION - No Changes Needed Here */
 .education-modal-content {
     margin-top: 2rem;
     display: flex;
@@ -269,7 +267,7 @@ body.modal-open .homepage-overlay {
     letter-spacing: 0.08em;
     line-height: 1.3;
     text-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    justify-content: flex-start;    
+    justify-content: flex-start;         
 }
 
 .education-image-container {
@@ -280,12 +278,12 @@ body.modal-open .homepage-overlay {
     max-width: 180px;
     max-height: 180px;
     object-fit: cover;
-    height: auto;`
+    height: auto;
     border-radius: 12px;
     margin-top: 0;
 }
 
-/* PROJECTS */
+/* --- PROJECT --- */
 
 body.projects-page-body {
     background-color: #181b22;
@@ -293,20 +291,28 @@ body.projects-page-body {
     font-family: 'Montserrat', Arial, sans-serif;
     margin: 0;
     padding: 2rem;
+    overflow-y: hidden;
 }
+
 .projects-container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 4rem);
+    
 }
+
 .projects-header {
     color: #fff;
     font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: 0.2rem;
     text-align: center;
-    margin-bottom: 3.5rem;
-    text-shadow: 0 2px 16px rgba(0,0,0,0.25);
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
 }
+
 .back-link {
     display: inline-block;
     margin-bottom: 1.5rem;
@@ -315,117 +321,102 @@ body.projects-page-body {
     font-size: 1rem;
     font-weight: 600;
 }
+
 .back-link:hover {
     text-decoration: underline;
 }
 
-/* --- NEW TIMELINE STYLES --- */
-.timeline {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
+/* --- TIMELINE WRAPPER --- */
+.timeline-wrapper {
+    flex-grow: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 3rem 0;
+    scrollbar-width: thin;
+    scrollbar-color: #7ecbff #252934;
 }
 
-/* The central timeline axis */
-.timeline::before {
-    content: '';
-    position: absolute;
-    width: 2px;
-    background-color: #343a40;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -1px; 
+.timeline-wrapper::-webkit-scrollbar {
+    height: 8px;
 }
+
+.timeline-wrapper::-webkit-scrollbar-track {
+    background: #252934;
+    border-radius: 10px;
+}
+
+.timeline-wrapper::-webkit-scrollbar-thumb {
+    background-color: #7ecbff;
+    border-radius: 10px;
+    border: 2px solid #252934;
+}
+
+/* --- TIMELINE CORE --- */
+.timeline {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 40px;
+    height: 600px;
+}
+
+
 
 .timeline-item {
-    padding: 10px 40px;
     position: relative;
-    width: 50%;
-    box-sizing: border-box; /* Important for width calculation */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: fit-content;
+    width: fit-content;
+    margin: 0 40px;
+    flex-shrink: 0;
+    height: 100%;
 }
 
-/* Place items on alternating sides */
-.timeline-item:nth-child(odd) {
-    left: 0;
-    padding-right: 25px; /* Space between content and line */
+/* The date label */
+.timeline-date {
+    position: relative;
+    transform: translate(0%, -50%);
+    color: #c0c0c0;
+    font-weight: 600;
+    background-color: #181b22;
+    padding: 5px 10px;
+    white-space: nowrap; /* Prevent date from wrapping */
+    border-radius: 5px; /* Slightly rounded corners for the date background */
 }
 
-.timeline-item:nth-child(even) {
-    left: 50%;
-    padding-left: 25px; /* Space between content and line */
-}
-
-/* The node (circle) on the timeline */
-.timeline-node {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background-color: #7ecbff;
-    top: 28px;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-.timeline-item:nth-child(odd) .timeline-node {
-    right: -8px; /* (node width / 2) */
-}
-
-.timeline-item:nth-child(even) .timeline-node {
-    left: -8px; /* (node width / 2) */
-}
-
-/* The project card itself */
+/* --- PROJECT CARD --- */
 .timeline-content {
     background: #252934;
     border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 480px;
+    width: fit-content;
+    min-width:400px;
+    max-width: 800px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    padding-bottom: 0.5rem;
 }
 
 .timeline-content:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
 
-/* The pointer/arrow connecting card to timeline */
-.timeline-content::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    border: medium solid #252934;
-}
-
-.timeline-item:nth-child(odd) .timeline-content::before {
-    right: -15px; /* Arrow position */
-    border-width: 10px 0 10px 15px;
-    border-color: transparent transparent transparent #252934;
-}
-
-.timeline-item:nth-child(even) .timeline-content::before {
-    left: -15px; /* Arrow position */
-    border-width: 10px 15px 10px 0;
-    border-color: transparent #252934 transparent transparent;
-}
-
-.timeline-date {
-    display: block;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #7ecbff;
-    padding: 1.5rem 1.5rem 0 1.5rem;
-}
-
-/* --- STYLES FOR CONTENT INSIDE THE CARD (MOSTLY PRESERVED) --- */
+/* --- IMAGE CONTAINER --- */
 .project-image-container {
     width: 100%;
-    max-height: 200px;
+    height: 200px;
     overflow: hidden;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    flex-shrink: 0;
 }
 
 .project-image-container img {
@@ -435,57 +426,73 @@ body.projects-page-body {
     display: block;
 }
 
+/* --- CARD BODY --- */
 .project-info {
-    padding: 1rem 1.5rem 1.5rem 1.5rem; /* Adjust padding */
+    padding: 1.2rem;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    overflow: visible;
 }
+
 
 .project-title {
     color: #fff;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 600;
-    margin-bottom: 0.75rem;
+    margin: 0;
     line-height: 1.2;
+    flex-shrink: 0;
 }
 
+/* Expanded description (no scroll) */
 .project-description {
     color: #c0c0c0;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    overflow: visible;
+    white-space: normal;
+    width: fit-content;
+    max-width: 600px;
 }
 
+/* Tech tags */
 .tech-stack {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    flex-shrink: 0;
 }
 
 .tech-tag {
     display: inline-block;
     background-color: #3a3f4c;
     color: #e0e0e0;
-    padding: 4px 10px;
-    border-radius: 5px;
-    font-size: 0.8rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
     font-weight: 500;
-    margin: 3px 5px 3px 0;
 }
 
+/* Links */
 .project-links {
     display: flex;
-    gap: 0.8rem;
-    margin-top: auto;
+    gap: 0.6rem;
+    flex-shrink: 0;
 }
 
 .project-link-btn {
     display: inline-flex;
     align-items: center;
-    padding: 0.7rem 1.2rem;
+    padding: 0.6rem 1rem;
     background-color: #7ecbff;
     color: #181b22;
     text-decoration: none;
-    border-radius: 8px;
-    font-size: 0.9rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
     font-weight: 600;
     transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
     border: none;
@@ -498,44 +505,8 @@ body.projects-page-body {
 }
 
 .project-link-btn svg {
-    margin-right: 0.5rem;
-    width: 18px;
-    height: 18px;
+    margin-right: 0.4rem;
+    width: 16px;
+    height: 16px;
     fill: currentColor;
-}
-
-/* --- RESPONSIVE ADJUSTMENTS FOR TIMELINE --- */
-@media screen and (max-width: 800px) {
-    /* Place the timeline to the left */
-    .timeline::before {
-        left: 20px;
-        margin-left: 0;
-    }
-
-    /* Full-width timeline items */
-    .timeline-item {
-        width: 100%;
-        padding-left: 50px; /* Space for the line and node */
-        padding-right: 15px;
-    }
-    
-    .timeline-item:nth-child(odd),
-    .timeline-item:nth-child(even) {
-        left: 0;
-    }
-    
-    /* Position all nodes on the left */
-    .timeline-node {
-        left: 12px; /* 20px (line position) - 8px (half node width) */
-    }
-
-    /* Make all arrows point left */
-    .timeline-content::before {
-        left: -15px;
-        border-width: 10px 15px 10px 0;
-        border-color: transparent #252934 transparent transparent;
-    }
-    .timeline-item:nth-child(odd) .timeline-content::before {
-       right: auto;
-    }
 }

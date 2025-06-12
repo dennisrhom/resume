@@ -83,5 +83,17 @@ document.addEventListener('DOMContentLoaded', function() {
         // console.error("Modal elements or homepage buttons not found on this page.");
         // This is expected on projects.html, so no error needed if we only expect this script on index.html
     }
+    // Enable horizontal scroll with mouse wheel
+const timelineWrapper = document.querySelector('.timeline-wrapper');
+
+timelineWrapper.addEventListener('wheel', function (e) {
+    if (e.deltaY !== 0) {
+        e.preventDefault(); // Prevent default vertical scroll
+        timelineWrapper.scrollLeft += e.deltaY;
+    }
+}, { passive: false });
+
 });
+
+
 // --- END OF FILE script.js ---
