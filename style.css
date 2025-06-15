@@ -1,4 +1,17 @@
-/* HOMEPAGE - No Changes Needed Here */
+/* HOMEPAGE  
+-bg: homepage background, includes image
+-overlay: dark overlay for text visibility
+-center: centers the content vertically and horizontally
+-spaceship-icon: icon for the spaceship
+-title: main title of the homepage
+-subtitle: subtitle text
+-buttons: container for the buttons
+-btn: individual button styles
+-footer: footer text at the bottom of the homepage
+
+and mobile adjustments
+
+*/
 .homepage-bg {
     min-height: 100vh;
     margin: 0;
@@ -60,7 +73,7 @@
 .homepage-buttons {
     display: flex;
     gap: 2.0rem;
-    justify-content: center;
+    justify-content: normal;
     margin-bottom: 5vh;
 }
 .homepage-btn {
@@ -95,8 +108,42 @@
     margin-bottom: 2vh;
     text-shadow: 0 2px 12px rgba(0,0,0,0.18);
 }
+/* FOR MOBILE */
+@media (max-width: 768px) {
+    .homepage-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem; /* Slightly smaller gap for vertical layout */
+    }
 
-/* === Modal Overlay (Dark Theme) === */
+    .homepage-btn {
+        min-width: 70vw; /* Make buttons wider on small screens */
+        text-align: center;
+    }
+}
+
+/* MODALS
+-overlay: dark overlay for the modal
+-content: main content area of the modal
+-close: close button for the modal
+-body: body text of the modal
+
+SHARED
+-header-common: common header styles for modals
+-label-common1: common label styles for modals
+
+CONTACT
+-info: contact information section
+-socials: social media links section
+-social-btn: individual social media button styles
+
+EDUCATION
+-content: education modal content area
+-text: text styles for education modal
+-image-container: container for education images
+-image: image styles for education modal
+
+*/
 .modal-overlay {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -150,14 +197,14 @@
     color: #7ecbff;
 }
 
-/* Blur homepage overlay when modal is open */
+/* BLUR BACKGROUND */
 body.modal-open .homepage-overlay {
     filter: blur(8px) brightness(0.8);
     pointer-events: none;
     user-select: none;
 }
 
-/* === Shared Modal Components - No Changes Needed Here === */
+/* SHARED */
 .modal-header-common {
     position: absolute;
     top: 0.01rem;
@@ -182,15 +229,6 @@ body.modal-open .homepage-overlay {
     text-shadow: 0 2px 8px rgba(0,0,0,0.10);
     gap: 1rem;
 }
-.modal-label-common2 {
-    color: #ffffff;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    line-height: 1.3;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    gap: 1rem;
-}
-
 /* CONTACT - No Changes Needed Here */
 .contact-modal-info {
     margin-top: 2rem;
@@ -233,7 +271,7 @@ body.modal-open .homepage-overlay {
     filter: invert(1) brightness(0.3) sepia(1) hue-rotate(180deg) saturate(4);
 }
 
-/* EDUCATION - No Changes Needed Here */
+/* EDUCATION */
 .education-modal-content {
     margin-top: 2rem;
     display: flex;
@@ -283,7 +321,25 @@ body.modal-open .homepage-overlay {
     margin-top: 0;
 }
 
-/* --- PROJECT --- */
+/* PROJECT 
+-page-body: body styles for the projects page
+-container: main container for the projects
+-header: header styles for the projects page
+-back-link: styles for the back link
+-timeline-wrapper: wrapper for the timeline
+-timeline: main timeline styles
+-timeline-item: individual timeline item styles
+-timeline-date: date label styles
+-timeline-content: project card styles
+-image-container: container for project images
+-card-body: styles for the project card body
+-tech-stack: styles for the technology stack tags
+-project-links: styles for project links
+-project-link-btn: styles for project link buttons
+-project-link-btn svg: styles for SVG icons in project links
+
+and mobile adjustments
+*/
 
 body.projects-page-body {
     background-color: #181b22;
@@ -327,6 +383,7 @@ body.projects-page-body {
 }
 
 /* --- TIMELINE WRAPPER --- */
+
 .timeline-wrapper {
     flex-grow: 1;
     overflow-x: auto;
@@ -351,16 +408,16 @@ body.projects-page-body {
     border: 2px solid #252934;
 }
 
-/* --- TIMELINE CORE --- */
+/* TIMELINE CORE */
 .timeline {
     display: flex;
     align-items: center;
     position: relative;
     padding: 0 40px;
     height: 600px;
+    gap: 2rem;
+    height: fit-content;
 }
-
-
 
 .timeline-item {
     position: relative;
@@ -375,7 +432,6 @@ body.projects-page-body {
     height: 100%;
 }
 
-/* The date label */
 .timeline-date {
     position: relative;
     transform: translate(0%, -50%);
@@ -387,11 +443,9 @@ body.projects-page-body {
     border-radius: 5px; /* Slightly rounded corners for the date background */
 }
 
-/* --- PROJECT CARD --- */
 .timeline-content {
     background: #252934;
     border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     position: relative;
     display: flex;
@@ -409,7 +463,6 @@ body.projects-page-body {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
 
-/* --- IMAGE CONTAINER --- */
 .project-image-container {
     width: 100%;
     height: 200px;
@@ -426,7 +479,6 @@ body.projects-page-body {
     display: block;
 }
 
-/* --- CARD BODY --- */
 .project-info {
     padding: 1.2rem;
     display: flex;
@@ -434,7 +486,6 @@ body.projects-page-body {
     flex-grow: 1;
     overflow: visible;
 }
-
 
 .project-title {
     color: #fff;
@@ -445,7 +496,6 @@ body.projects-page-body {
     flex-shrink: 0;
 }
 
-/* Expanded description (no scroll) */
 .project-description {
     color: #c0c0c0;
     font-size: 0.9rem;
@@ -458,7 +508,6 @@ body.projects-page-body {
     max-width: 600px;
 }
 
-/* Tech tags */
 .tech-stack {
     margin-bottom: 1rem;
     display: flex;
@@ -477,7 +526,6 @@ body.projects-page-body {
     font-weight: 500;
 }
 
-/* Links */
 .project-links {
     display: flex;
     gap: 0.6rem;
@@ -510,3 +558,20 @@ body.projects-page-body {
     height: 16px;
     fill: currentColor;
 }
+
+/* PROJECT MOBILE */
+@media (max-width: 768px) {
+.projects-page-body {
+    overflow-y: scroll;
+}
+.timeline-wrapper {
+    overflow-y: scroll;
+}
+.timeline {
+    flex-direction: column;
+}
+.timeline-content {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}}
