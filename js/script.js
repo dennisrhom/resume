@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'ABOUT ME': `
             <h2 class="modal-header-common">ABOUT ME</h2>
             <p>Hello :D</p>
+                <a href="../pages/temp.html" class="back-link">temp.html</a>
+            
         `,
  
 
@@ -60,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const sectionKey = btn.textContent.trim().toUpperCase();
 
                 if (sectionKey === 'PROJECTS') {
-                    window.location.href = 'projects.html'; // Navigate to projects.html
+                    window.location.href = 'pages/projects.html'; // Navigate to projects.html
                 } else if (sectionContent[sectionKey]) {
                     modalBody.innerHTML = sectionContent[sectionKey];
                     modalOverlay.style.display = 'flex';

@@ -16,7 +16,7 @@ and mobile adjustments
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    background: url('images/homepage.jpg') no-repeat center center fixed;
+    background: url('../images/homepage.jpg') no-repeat center center fixed;
     background-size: cover;
     position: relative;
     font-family: 'Montserrat', Arial, sans-serif;
@@ -411,12 +411,11 @@ body.projects-page-body {
 /* TIMELINE CORE */
 .timeline {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     position: relative;
     padding: 0 40px;
-    height: 600px;
     gap: 2rem;
-    height: fit-content;
+    height: 60vh;
 }
 
 .timeline-item {
@@ -425,11 +424,8 @@ body.projects-page-body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-width: fit-content;
-    width: fit-content;
     margin: 0 40px;
     flex-shrink: 0;
-    height: 100%;
 }
 
 .timeline-date {
@@ -450,10 +446,8 @@ body.projects-page-body {
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 480px;
-    width: fit-content;
-    min-width:400px;
-    max-width: 800px;
+    max-width: 600px;
+    height: 100%;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     padding-bottom: 0.5rem;
 }
@@ -465,7 +459,7 @@ body.projects-page-body {
 
 .project-image-container {
     width: 100%;
-    height: 200px;
+    height: 40%;
     overflow: hidden;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
@@ -484,7 +478,7 @@ body.projects-page-body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    overflow: visible;
+    overflow: auto;
 }
 
 .project-title {
@@ -498,14 +492,12 @@ body.projects-page-body {
 
 .project-description {
     color: #c0c0c0;
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.4;
     margin-bottom: 1rem;
     flex-grow: 1;
     overflow: visible;
     white-space: normal;
-    width: fit-content;
-    max-width: 600px;
 }
 
 .tech-stack {
@@ -560,18 +552,58 @@ body.projects-page-body {
 }
 
 /* PROJECT MOBILE */
+
 @media (max-width: 768px) {
-.projects-page-body {
-    overflow-y: scroll;
+    body.projects-page-body {
+        padding: 1.5rem;
+        overflow-y: auto;
+        height: auto;
+    }
+
+    .projects-container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .timeline-wrapper {
+        overflow: visible;
+        padding: 0;
+    }
+
+    .timeline {
+        flex-direction: column;
+        gap: 3rem;
+        padding: 0;
+        height: auto;
+    }
+
+    .timeline-item {
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .timeline-date {
+        position: relative;
+        transform: translateY(-50%);
+        margin: 0 auto;
+        z-index: 2;
+    }
+
+    .timeline-content {
+        height: auto;
+        min-width: unset;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .project-image-container {
+        height: 180px;
+    }
+
+    .project-description {
+        width: 100%;
+        max-width: 100%;
+    }
 }
-.timeline-wrapper {
-    overflow-y: scroll;
-}
-.timeline {
-    flex-direction: column;
-}
-.timeline-content {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-}}
