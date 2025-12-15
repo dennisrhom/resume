@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAD Design & 3D Printing | Dennis Hom</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Specific styles for the project page */
+        .project-hero {
+            height: 50vh;
+            background-color: #333; /* Placeholder background */
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+        .project-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0; left: 0;
+            opacity: 0.4;
+        }
+        .project-header {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .project-header h1 {
+            color: #fff;
+            font-size: 3rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .project-content {
+            padding: 3rem 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .detail-block { margin-bottom: 2rem; }
+        .detail-block h2 { color: var(--accent); margin-bottom: 1rem; }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .gallery-grid img {
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            border: 1px solid var(--border-color);
+        }
+        .gallery-grid img:hover { transform: scale(1.02); }
+        .back-nav {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+        .pdf-embed {
+            width: 100%;
+            height: 500px;
+            border: 1px solid var(--border-color);
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--card-bg);
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        .project-hero-text-overlay {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            z-index: 3;
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .project-hero-text-overlay h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        .project-hero-text-overlay .tags span {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="back-nav">
+        <a href="../index.html#projects" class="btn secondary">← Back to Projects</a>
+    </div>
+
+    <!-- Project Hero Section -->
+    <div class="project-hero">
+        <img src="https://placehold.co/1920x1080/333/fff?text=CAD+and+3D+Printing" alt="CAD Design and 3D Printing Hero Image">
+        <div class="project-hero-text-overlay">
+            <h1>CAD Design and 3D-Printing</h1>
+            <div class="tags" style="margin-top: 1rem;">
+                <span>CAD</span><span>3D Printing</span><span>Prototyping</span><span>SolidWorks</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-content">
+        <!-- Project Overview -->
+        <div class="detail-block">
+            <h2>Overview</h2>
+            <p>
+                This section showcases personal projects involving Computer-Aided Design (CAD) and 3D printing. These projects range from creating functional components to artistic models, demonstrating practical application of design principles and additive manufacturing techniques.
+            </p>
+        </div>
+
+        <!-- Technical Details -->
+        <div class="detail-block">
+            <h2>Design Process & Tools</h2>
+            <ul class="bullet-list">
+                <li>Utilizing SolidWorks and other CAD software for parametric modeling and detailed design.</li>
+                <li>Preparing models for 3D printing, including mesh repair and slicing for optimal print settings.</li>
+                <li>Experience with FDM (Fused Deposition Modeling) 3D printers and various filament materials (PLA, ABS, PETG).</li>
+                <li>Focus on designing for manufacturability and functional prototypes.</li>
+            </ul>
+        </div>
+
+        <!-- Gallery / Visuals -->
+        <div class="detail-block">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <!-- Placeholder images - replace with your actual photos -->
+                <img src="https://placehold.co/400x300/333/fff?text=3D+Printed+Part+1" alt="3D Printed Part 1">
+                <img src="https://placehold.co/400x300/333/fff?text=CAD+Model+1" alt="CAD Model 1">
+                <img src="https://placehold.co/400x300/333/fff?text=3D+Printed+Part+2" alt="3D Printed Part 2">
+                <img src="https://placehold.co/400x300/333/fff?text=CAD+Model+2" alt="CAD Model 2">
+            </div>
+        </div>
+
+        <!-- Research Paper / PDF -->
+        <div class="detail-block">
+            <h2>Documentation</h2>
+            <p>Detailed design files or project reports:</p>
+            <div class="pdf-embed">
+                <!-- Placeholder for a PDF embed if available -->
+                Project files coming soon.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Dennis Hom.</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

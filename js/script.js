@@ -1,105 +1,105 @@
-
-// --- START OF FILE script.js ---
-
 document.addEventListener('DOMContentLoaded', function() {
-    const modalOverlay = document.getElementById('modal-overlay');
-    const modalClose = document.getElementById('modal-close');
-    const modalBody = document.getElementById('modal-body');
-    const buttons = document.querySelectorAll('.homepage-btn'); // These are the buttons on index.html
+    
+    // --- Dark Mode Logic ---
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+    const currentTheme = localStorage.getItem('theme');
+    
+    if (currentTheme) {
+        body.classList.add(currentTheme);
+    }
 
-    // Section content for each button on index.html
-    const sectionContent = {
-        
-        'ABOUT ME': `
-            <h2 class="modal-header-common">ABOUT ME</h2>
-            <p>Hello :D</p>
-                <a href="../pages/temp.html" class="back-link">temp.html</a>
-            
-        `,
- 
-
-        'EDUCATION': `
-        
-            <h2 class="modal-header-common">EDUCATION</h2>
-            <div class="education-modal-content">
-                <div class="education-text">
-                    <div class="school-name">The University of Texas at Austin</div>
-                    <div class="degree-name">Bachelors of Science in Aerospace Engineering</div>
-                    <div class="degree-name">MAY 2025</div>
-                    <div class="degree-name">GPA: 3.6</div>
-                </div>
-                <div class="education-image-container">
-                    <img src='images/horn.svg' alt="UT Tower" class="education-image">
-                </div>
-            </div>
-        `,
-        'CONTACT': `
-            <h2 class="modal-header-common">CONTACT</h2>
-            <div class="contact-modal-info">
-                <div class="modal-label-common1">EMAIL: <a href='mailto:dryanhom@gmail.com'>DRYANHOM@GMAIL.COM</a></div>
-
-            </div>
-            <div class="contact-modal-socials">
-                <a href='https://www.linkedin.com/in/dennis-hom-134017237/' target='_blank' class='contact-social-btn' title='LinkedIn'>
-                    <img src='https://img.icons8.com/ios-filled/28/ffffff/linkedin.png' alt='LinkedIn'/>
-                </a>
-                <a href='https://twitter.com/' target='_blank' class='contact-social-btn' title='Twitter'>
-                    <img src='https://img.icons8.com/ios-filled/28/ffffff/twitter.png' alt='Twitter'/>
-                </a>
-                <a href='https://instagram.com/dennishom' target='_blank' class='contact-social-btn' title='Instagram'>
-                    <img src='https://img.icons8.com/ios-filled/28/ffffff/instagram-new.png' alt='Instagram'/>
-                </a>
-                <a href='https://github.com/dennisrhom' target='_blank' class='contact-social-btn' title='GitHub'>
-                    <img src='https://img.icons8.com/ios-glyphs/28/ffffff/github.png' alt='GitHub'/>
-                </a>
-            </div>
-        `
-    };
-
-    if (buttons.length > 0 && modalOverlay && modalBody && modalClose) {
-        buttons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const sectionKey = btn.textContent.trim().toUpperCase();
-
-                if (sectionKey === 'PROJECTS') {
-                    window.location.href = 'pages/projects.html'; // Navigate to projects.html
-                } else if (sectionContent[sectionKey]) {
-                    modalBody.innerHTML = sectionContent[sectionKey];
-                    modalOverlay.style.display = 'flex';
-                    document.body.classList.add('modal-open');
-                }
-            });
-        });
-        modalClose.addEventListener('click', () => {
-            modalOverlay.style.display = 'none';
-            document.body.classList.remove('modal-open');
-        });
-
-        modalOverlay.addEventListener('click', (e) => {
-            if (e.target === modalOverlay) { // Clicked on the overlay itself, not the content
-                modalOverlay.style.display = 'none';
-                document.body.classList.remove('modal-open');
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                localStorage.removeItem('theme');
             }
         });
-    } else {
-        // console.error("Modal elements or homepage buttons not found on this page.");
-        // This is expected on projects.html, so no error needed if we only expect this script on index.html
     }
-    
 
-// HORIZONTAL SCROLLING FOR PROJECTS TIMELINE
+    // --- Mobile Menu ---
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const navLinksItems = document.querySelectorAll('.nav-links li a');
 
-    const timelineWrapper = document.querySelector('.timeline-wrapper');
-
-    timelineWrapper.addEventListener('wheel', function (e) {
-        if (e.deltaY !== 0) {
-            e.preventDefault(); // Prevent default vertical scroll
-            timelineWrapper.scrollLeft += e.deltaY;
-        }
-    }, { passive: false });
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+        });
     }
-);
 
+    if (navLinksItems) {
+        navLinksItems.forEach(link => {
+            link.addEventListener('click', () => {
+                if(navLinks) navLinks.classList.remove('nav-active');
+            });
+        });
+    }
 
+    // --- Accordion Logic (Coursework & Orgs) ---
+    const accordions = document.querySelectorAll('.accordion-header');
 
-// --- END OF FILE script.js ---
+    accordions.forEach(acc => {
+        acc.addEventListener('click', function() {
+            // Toggle active class on parent item
+            const item = this.parentElement;
+            item.classList.toggle('active');
+
+            // Handle height animation
+            const content = this.nextElementSibling;
+            if (item.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.style.maxHeight = 0;
+            }
+        });
+    });
+
+    // --- Active Nav Link on Scroll ---
+    const sections = document.querySelectorAll('section, header');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    const observerOptions = {
+        root: null,
+        threshold: 0.3,
+        rootMargin: "-50px"
+    };
+
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navItems.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === entry.target.id) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+
+    if (sections.length > 0) {
+        sections.forEach(section => {
+            if(section.classList.contains('section-scroll') || section.id === 'home') {
+                navObserver.observe(section);
+            }
+        });
+    }
+
+    // --- Fade Animations ---
+    const fadeObserverOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                fadeObserver.unobserve(entry.target);
+            }
+        });
+    }, fadeObserverOptions);
+
+    const hiddenElements = document.querySelectorAll('.hidden-fade, .hidden-fade-up');
+    hiddenElements.forEach((el) => fadeObserver.observe(el));
+});
