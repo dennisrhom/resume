@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-    
+document.addEventListener('DOMContentLoaded', function () {
     // --- Dark Mode Logic ---
     const toggleBtn = document.getElementById('theme-toggle');
     const body = document.body;
@@ -20,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+
     // --- Mobile Menu ---
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -39,55 +39,81 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Accordion Logic (Coursework & Orgs) ---
-    const accordions = document.querySelectorAll('.accordion-header');
+    /* =========================================================
+       SMOOTH HEIGHT ANIMATION HELPERS
+       (critical for non-choppy closing)
+    ========================================================= */
+    function openSection(element) {
+        element.style.maxHeight = element.scrollHeight + 'px';
+        element.style.opacity = '1';
+    }
 
-    accordions.forEach(acc => {
-        acc.addEventListener('click', function() {
-            // Toggle active class on parent item
-            const item = this.parentElement;
-            item.classList.toggle('active');
+    function closeSection(element) {
+        element.style.maxHeight = element.scrollHeight + 'px';
+        requestAnimationFrame(() => {
+            element.style.maxHeight = '0px';
+            element.style.opacity = '0';
+        });
+    }
 
-            // Handle height animation
-            const content = this.nextElementSibling;
+    /* =========================================================
+       ACCORDIONS (Education + Leadership)
+    ========================================================= */
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const item = header.closest('.accordion-item');
+            const content = item.querySelector('.accordion-content');
+
+            if (!content) return;
+
             if (item.classList.contains('active')) {
-                content.style.maxHeight = content.scrollHeight + "px";
+                closeSection(content);
+                item.classList.remove('active');
             } else {
-                content.style.maxHeight = 0;
+                item.classList.add('active');
+                openSection(content);
             }
         });
     });
 
-    // --- Active Nav Link on Scroll ---
-    const sections = document.querySelectorAll('section, header');
-    const navItems = document.querySelectorAll('.nav-item');
+    /* =========================================================
+       OTHER PROJECTS DROPDOWN
+    ========================================================= */
+    window.toggleOtherProjects = function () {
+        const container = document.querySelector('.other-projects-container');
+        if (!container) return;
 
-    const observerOptions = {
-        root: null,
-        threshold: 0.3,
-        rootMargin: "-50px"
+        const content = container.querySelector('.other-projects-content');
+        if (!content) return;
+
+        if (container.classList.contains('active')) {
+            closeSection(content);
+            container.classList.remove('active');
+        } else {
+            container.classList.add('active');
+            openSection(content);
+        }
     };
+    
 
-    const navObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navItems.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').substring(1) === entry.target.id) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        });
-    }, observerOptions);
+    /* =========================================================
+       EXPERIENCE TIMELINE DROPDOWN
+    ========================================================= */
+    window.toggleExperience = function (element) {
+        if (!element) return;
 
-    if (sections.length > 0) {
-        sections.forEach(section => {
-            if(section.classList.contains('section-scroll') || section.id === 'home') {
-                navObserver.observe(section);
-            }
-        });
-    }
+        const details = element.querySelector('.timeline-details');
+        if (!details) return;
+
+        if (element.classList.contains('active')) {
+            closeSection(details);
+            element.classList.remove('active');
+        } else {
+            element.classList.add('active');
+            openSection(details);
+        }
+    };
+    
 
     // --- Fade Animations ---
     const fadeObserverOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };

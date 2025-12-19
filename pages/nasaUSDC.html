@@ -7,159 +7,234 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        /* Specific styles for the project page */
-        .project-hero {
-            height: 50vh;
-            background-color: #343a40; /* Dark background for image */
+        /* --- HIGH-CONTRAST PROJECT STYLES --- */
+        :root {
+            --project-hero-bg: #1a1c20; /* Deep charcoal for contrast */
+            --content-max-width: 850px;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            line-height: 1.7; /* Improved readability */
+        }
+
+        /* Clean Header without Image */
+        .project-header-section {
+            background: var(--project-hero-bg);
+            padding: 8rem 2rem 4rem 2rem;
+            color: #ffffff;
+            border-bottom: 4px solid var(--accent);
             position: relative;
+        }
+
+        .header-container {
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+        }
+
+        .project-category {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .project-header-section h1 {
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        /* Improved Tag Contrast */
+        .project-tags {
             display: flex;
-            align-items: flex-end;
-            overflow: hidden;
+            flex-wrap: wrap;
+            gap: 0.75rem;
         }
-        .project-hero img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+
+        .project-tags span {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* High Visibility Back Button */
+        .top-nav {
             position: absolute;
-            top: 0; left: 0;
-            opacity: 0.4; /* Slightly transparent */
+            top: 2rem;
+            left: 2rem;
+            z-index: 10;
         }
-        .project-header {
-            position: relative;
-            z-index: 2;
-            padding: 2rem;
-            max-width: 1200px;
+
+        .btn-back {
+            background: #ffffff;
+            color: #1a1c20 !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Main Content Styling */
+        .project-body {
+            padding: 4rem 2rem;
+            max-width: var(--content-max-width);
             margin: 0 auto;
-            width: 100%;
         }
-        .project-header h1 {
-            color: #fff;
-            font-size: 3rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+
+        .detail-block {
+            margin-bottom: 4rem;
         }
-        .project-content {
-            padding: 3rem 1.5rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .detail-block { margin-bottom: 2rem; }
-        .detail-block h2 { color: var(--accent); margin-bottom: 1rem; }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        .gallery-grid img {
-            border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.2s;
-            border: 1px solid var(--border-color);
-        }
-        .gallery-grid img:hover { transform: scale(1.02); }
-        .back-nav {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 100;
-        }
-        .pdf-embed {
-            width: 100%;
-            height: 500px;
-            border: 1px solid var(--border-color);
-            margin-top: 1rem;
+
+        /* Using --text-main for high contrast headers */
+        .detail-block h2 {
+            color: var(--text-main);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-            background: var(--card-bg);
-            color: var(--text-muted);
+            gap: 10px;
+        }
+
+        .detail-block h2::before {
+            content: '';
+            width: 30px;
+            height: 3px;
+            background: var(--accent);
+            display: inline-block;
+        }
+
+        /* Content Text Contrast */
+        .detail-block p, .detail-block li {
             font-size: 1.1rem;
+            color: var(--text-main); /* Switched from muted for better readability */
+            margin-bottom: 1.2rem;
         }
-        .project-hero-text-overlay {
-            position: absolute;
-            bottom: 2rem;
-            left: 2rem;
-            z-index: 3;
-            color: #fff;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin: 2rem 0;
         }
-        .project-hero-text-overlay h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
+
+        .gallery-simple {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
-        .project-hero-text-overlay .tags span {
-            background: rgba(255, 255, 255, 0.2);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.5);
+
+        .gallery-simple img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        /* --- MOBILE OPTIMIZATION --- */
+        @media (max-width: 768px) {
+            .project-header-section {
+                padding-top: 7rem;
+            }
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+            .top-nav {
+                left: 1rem;
+                top: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="back-nav">
-        <a href="../index.html#projects" class="btn secondary">← Back to Projects</a>
-    </div>
+    <nav class="top-nav">
+        <a href="../index.html#projects" class="btn-back">← ALL PROJECTS</a>
+    </nav>
 
-    <!-- Project Hero Section -->
-    <div class="project-hero">
-        <img src="https://placehold.co/1920x1080/343a40/ffffff?text=NASA+USDC-9+Fluid+System" alt="NASA USDC-9 Project Hero Image">
-        <div class="project-hero-text-overlay">
+    <header class="project-header-section">
+        <div class="header-container">
+            <span class="project-category">Research & Design</span>
             <h1>NASA USDC-9: Microgravity Fluids</h1>
-            <div class="tags" style="margin-top: 1rem;">
-                <span>CAD</span><span>Fluid Dynamics</span><span>Systems Eng</span><span>Microgravity</span>
+            <div class="project-tags">
+                <span>CAD Modeling</span>
+                <span>Fluid Dynamics</span>
+                <span>Systems Engineering</span>
+                <span>Requirement Verification</span>
             </div>
         </div>
-    </div>
+    </header>
 
-    <div class="project-content">
-        <!-- Project Overview -->
-        <div class="detail-block">
-            <h2>Overview</h2>
+    <main class="project-body">
+        
+        <!-- Section 1: The Challenge -->
+        <section class="detail-block">
+            <h2>The Challenge</h2>
             <p>
-                Part of the NASA University Student Design Challenge, this project focused on engineering and testing a passive fluid delivery system for microgravity environments. The goal was to analyze capillary flow through various porous substrates.
+                In microgravity, fluid behavior is dominated by surface tension rather than gravity. This makes traditional fluid delivery systems (like those used in standard terrestrial plants or medical devices) ineffective.
             </p>
             <p>
-                My role involved leading design verification and managing requirements presentation to NASA SMEs.
+                As part of the <strong>NASA University Student Design Challenge</strong>, our team was tasked with designing a passive fluid delivery system capable of moving liquids through porous substrates without the need for pumps or electrical power.
             </p>
-        </div>
+        </section>
 
-        <!-- Technical Details -->
-        <div class="detail-block">
-            <h2>Key Contributions & Technical Approach</h2>
+        <!-- Section 2: Technical Breakdown -->
+        <section class="detail-block">
+            <h2>Technical Approach</h2>
+            <div class="tech-grid">
+                <div>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--accent);">Analytical Focus</h4>
+                    <p style="font-size: 0.95rem;">Modeled capillary flow rates using the Lucas-Washburn equation to predict how quickly different fluids would saturate specific porous media.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--accent);">Software Used</h4>
+                    <p style="font-size: 0.95rem;">SolidWorks for CAD, MATLAB for flow analysis, and LabVIEW for sensor data acquisition during ground testing.</p>
+                </div>
+            </div>
             <ul class="bullet-list">
-                <li>Coordinated a cross-functional team from concept to final design, ensuring all requirements were met and clearly documented.</li>
-                <li>Led preliminary and critical design reviews, presenting methodologies and findings to faculty and NASA experts.</li>
-                <li>Analyzed capillary flow through porous media to design passive fluid transport methods suitable for microgravity.</li>
-                <li>Iteratively designed 3+ 3D CAD models using ISS heritage sensors to test and document microgravity fluid interaction through substrates.</li>
-                <li>Documented fluid movement and absorption rates across different material configurations.</li>
+                <li>Led a cross-functional team through Preliminary (PDR) and Critical Design Reviews (CDR) with NASA Subject Matter Experts.</li>
+                <li>Iteratively designed 3+ CAD models to interface with ISS heritage sensors for data consistency.</li>
+                <li>Documented absorption rates across 12 different material configurations to find the optimal substrate.</li>
             </ul>
-        </div>
+        </section>
 
-        <!-- Gallery / Visuals -->
-        <div class="detail-block">
-            <h2>Visuals & Design</h2>
-            <div class="gallery-grid">
-                <!-- Placeholder images - replace with actual visuals -->
-                <img src="https://placehold.co/400x300/343a40/fff?text=System+Concept" alt="NASA USDC-9 Concept">
-                <img src="https://placehold.co/400x300/343a40/fff?text=CAD+Model" alt="NASA USDC-9 CAD">
-                <img src="https://placehold.co/400x300/343a40/fff?text=Substrate+Test" alt="NASA USDC-9 Substrate Test">
+        <!-- Section 3: Visuals -->
+        <section class="detail-block">
+            <h2>Analysis & Design</h2>
+            <div class="gallery-simple">
+                <!-- Replace with actual project images -->
+                <img src="https://placehold.co/600x400/1a1c20/ffffff?text=Design+CAD+View" alt="CAD Analysis">
+                <img src="https://placehold.co/600x400/1a1c20/ffffff?text=Fluid+Flow+Chart" alt="Data Visualization">
             </div>
-        </div>
+        </section>
 
-        <!-- Research Paper / PDF -->
-        <div class="detail-block">
-            <h2>Documentation</h2>
-            <p>The NASA Space-I project was featured on the NASA website:</p>
-            <a href="https://www.nasa.gov/space-i-substrate-testing-system-for-fluid-management/" target="_blank" class="feat-link" style="font-size: 1rem; color: var(--accent);">Learn More on NASA.gov</a>
-            <div class="pdf-embed">
-                <!-- Placeholder for a PDF embed if available -->
-                PDF report coming soon.
-            </div>
-        </div>
-    </div>
+        <!-- Section 4: External Links -->
+        <section class="detail-block" style="text-align: center; background: var(--card-bg); padding: 3rem; border-radius: 12px;">
+            <h2 style="justify-content: center;">Read the NASA Publication</h2>
+            <p>Our team's work was formally recognized and featured on the official NASA website.</p>
+            <a href="https://www.nasa.gov/space-i-substrate-testing-system-for-fluid-management/" target="_blank" class="btn primary" style="margin-top: 1rem;">View on NASA.gov</a>
+        </section>
 
-    <footer>
-        <p>&copy; 2025 Dennis Hom.</p>
+    </main>
+
+    <footer style="background: var(--project-hero-bg); color: #fff; padding: 3rem 0;">
+        <div style="max-width: var(--content-max-width); margin: 0 auto; text-align: center; padding: 0 2rem;">
+            <p>&copy; 2025 Dennis Hom. Engineering Portfolio.</p>
+        </div>
     </footer>
 
     <script src="../js/script.js"></script>
