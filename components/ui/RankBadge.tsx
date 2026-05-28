@@ -1,13 +1,13 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
 
-// File map — place PNGs in public/rank-badges/ with these exact names
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const PNG_PATHS: Record<string, string> = {
-  "valorant":  "/rank-badges/valorant-immortal2.png",
-  "cs2":       "/rank-badges/faceit-10.png",          // TODO: save image 4 here
-  "apex":      "/rank-badges/apex-diamond2.png",
-  "overwatch": "/rank-badges/overwatch-diamond.webp",
+  "valorant":  `${BASE}/rank-badges/valorant-immortal2.png`,
+  "cs2":       `${BASE}/rank-badges/faceit-10.png`,
+  "apex":      `${BASE}/rank-badges/apex-diamond2.png`,
+  "overwatch": `${BASE}/rank-badges/overwatch-diamond.webp`,
 };
 
 // ── SVG fallbacks (shown while PNG loads or if file is missing) ──────────────
@@ -127,14 +127,14 @@ export function RankBadge({ game, size = 72, label }: Props) {
         justifyContent: "center",
       }}
     >
-      <Image
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
         src={src}
         alt={label ?? `${game} rank badge`}
         width={size}
         height={size}
         style={{ objectFit: "contain", imageRendering: "crisp-edges" }}
         onError={() => setImgFailed(true)}
-        priority={false}
       />
     </div>
   );
