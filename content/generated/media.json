@@ -1,0 +1,471 @@
+{
+  "blastx-phantom/cad-assembled": {
+    "width": 1707,
+    "height": 1065,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "color": "#4c535a",
+    "stamp": "1794593862748.1555:192356:{}"
+  },
+  "blastx-phantom/cad-exploded": {
+    "width": 1300,
+    "height": 980,
+    "widths": [
+      480,
+      960,
+      1300
+    ],
+    "color": "#686868",
+    "stamp": "1794593862742.1555:499404:{}"
+  },
+  "blastx-phantom/cad-split": {
+    "width": 454,
+    "height": 504,
+    "widths": [
+      454
+    ],
+    "color": "#686868",
+    "stamp": "1794593862757.1555:168368:{}"
+  },
+  "blastx-phantom/finished-bench": {
+    "width": 2212,
+    "height": 1659,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "color": "#201919",
+    "stamp": "1794593862744.1555:496822:{}"
+  },
+  "blastx-phantom/finished-grass": {
+    "width": 2048,
+    "height": 1536,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "color": "#121904",
+    "stamp": "1794593862746.1555:503612:{}"
+  },
+  "blastx-phantom/in-game-reference": {
+    "width": 1437,
+    "height": 637,
+    "widths": [
+      480,
+      960,
+      1437
+    ],
+    "color": "#0b1219",
+    "stamp": "1794593862760.1555:646539:{}"
+  },
+  "blastx-phantom/internals-donor": {
+    "width": 1074,
+    "height": 431,
+    "widths": [
+      480,
+      960,
+      1074
+    ],
+    "color": "#68615a",
+    "stamp": "1794593862753.1555:108616:{\"rotate\":270}"
+  },
+  "blastx-phantom/internals-fitted": {
+    "width": 1659,
+    "height": 715,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "color": "#61615a",
+    "stamp": "1794593862751.1555:457468:{\"crop\":{\"left\":0,\"top\":1110,\"width\":1659,\"height\":715}}"
+  },
+  "blastx-phantom/painted-parts": {
+    "width": 1659,
+    "height": 2212,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "color": "#120b0b",
+    "stamp": "1794593862755.1555:451694:{}"
+  },
+  "cfd/cylinder-vortex-street": {
+    "width": 386,
+    "height": 314,
+    "widths": [
+      386
+    ],
+    "color": "#532f20",
+    "stamp": "1794593862793.1555:76510:{}"
+  },
+  "cfd/double-ramp-detached-mach": {
+    "width": 1437,
+    "height": 930,
+    "widths": [
+      480,
+      960,
+      1437
+    ],
+    "color": "#28282f",
+    "stamp": "1794593862787.1555:40115:{}"
+  },
+  "cfd/double-ramp-mach-15deg": {
+    "width": 1475,
+    "height": 867,
+    "widths": [
+      480,
+      960,
+      1475
+    ],
+    "color": "#4c1912",
+    "stamp": "1794593862781.1555:43332:{}"
+  },
+  "cfd/double-ramp-mach-25deg": {
+    "width": 1435,
+    "height": 862,
+    "widths": [
+      480,
+      960,
+      1435
+    ],
+    "color": "#28282f",
+    "stamp": "1794593862783.1555:43747:{}"
+  },
+  "cfd/double-ramp-mach-35deg": {
+    "width": 1460,
+    "height": 897,
+    "widths": [
+      480,
+      960,
+      1460
+    ],
+    "color": "#28282f",
+    "stamp": "1794593862785.1555:45784:{}"
+  },
+  "cfd/forward-step-mach": {
+    "width": 2048,
+    "height": 1126,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "color": "#28282f",
+    "stamp": "1794593862789.1555:173018:{}"
+  },
+  "cfd/parallel-speedup": {
+    "width": 755,
+    "height": 629,
+    "widths": [
+      480,
+      755
+    ],
+    "color": "#707070",
+    "stamp": "1794593862791.1555:34772:{}"
+  },
+  "dragonfly/cl-cd-re-297k": {
+    "width": 830,
+    "height": 590,
+    "widths": [
+      480,
+      830
+    ],
+    "color": "#707070",
+    "stamp": "1794593862805.1555:37553:{}"
+  },
+  "dragonfly/cl-cd-re-503k": {
+    "width": 812,
+    "height": 592,
+    "widths": [
+      480,
+      812
+    ],
+    "color": "#707070",
+    "stamp": "1794593862807.1555:37421:{}"
+  },
+  "dragonfly/cl-cd-re-719k": {
+    "width": 828,
+    "height": 592,
+    "widths": [
+      480,
+      828
+    ],
+    "color": "#707070",
+    "stamp": "1794593862809.1555:38263:{}"
+  },
+  "dragonfly/smoke-body-low-re": {
+    "width": 1088,
+    "height": 894,
+    "widths": [
+      480,
+      960,
+      1088
+    ],
+    "color": "#444444",
+    "stamp": "1794593862797.1555:1749539:{}"
+  },
+  "dragonfly/smoke-body-tripped": {
+    "width": 978,
+    "height": 730,
+    "widths": [
+      480,
+      960,
+      978
+    ],
+    "color": "#44443d",
+    "stamp": "1794593862800.1555:1363015:{}"
+  },
+  "dragonfly/smoke-tail": {
+    "width": 948,
+    "height": 572,
+    "widths": [
+      480,
+      948
+    ],
+    "color": "#444444",
+    "stamp": "1794593862803.1555:1100178:{}"
+  },
+  "esports/blast-cs-major-arena": {
+    "width": 2212,
+    "height": 1659,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "color": "#04040b",
+    "stamp": "1794593862762.1555:454250:{}"
+  },
+  "esports/esports-lounge": {
+    "width": 2212,
+    "height": 1659,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "color": "#121919",
+    "stamp": "1794593862764.1555:422524:{}"
+  },
+  "esports/red-bull-campus-clutch": {
+    "width": 1536,
+    "height": 2048,
+    "widths": [
+      480,
+      960,
+      1536
+    ],
+    "color": "#04040b",
+    "stamp": "1794593862766.1555:451884:{}"
+  },
+  "esports/tournament-station": {
+    "width": 1659,
+    "height": 2212,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "color": "#121212",
+    "stamp": "1794593862769.1555:506321:{}"
+  },
+  "events/spacevision-2026-panel": {
+    "width": 1659,
+    "height": 2212,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "color": "#040404",
+    "stamp": "1794593862773.1555:339096:{}"
+  },
+  "events/spacevision-2026-shuttle": {
+    "width": 1659,
+    "height": 2212,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "color": "#192f4c",
+    "stamp": "1794593862771.1555:507823:{}"
+  },
+  "events/spacewalk-3-badge": {
+    "width": 1659,
+    "height": 2212,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "color": "#0b0b0b",
+    "stamp": "1794593862776.1555:400032:{}"
+  },
+  "pegasi/glass-pad-god-of-speed": {
+    "width": 2048,
+    "height": 1536,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "color": "#5a5a5a",
+    "stamp": "1794593862778.1555:479148:{}"
+  },
+  "propeller/breadboard-circuit": {
+    "width": 900,
+    "height": 537,
+    "widths": [
+      480,
+      900
+    ],
+    "color": "#040404",
+    "stamp": "1794593862812.1555:1136904:{}"
+  },
+  "propeller/force-vs-time-trial-1": {
+    "width": 847,
+    "height": 646,
+    "widths": [
+      480,
+      847
+    ],
+    "color": "#707070",
+    "stamp": "1794593862813.1555:22450:{}"
+  },
+  "propeller/photodiode-output": {
+    "width": 847,
+    "height": 644,
+    "widths": [
+      480,
+      847
+    ],
+    "color": "#707070",
+    "stamp": "1794593862817.1555:26630:{}"
+  },
+  "propeller/strain-gage-calibration": {
+    "width": 860,
+    "height": 672,
+    "widths": [
+      480,
+      860
+    ],
+    "color": "#707070",
+    "stamp": "1794593862815.1555:22052:{}"
+  },
+  "studio/alphonse-elric-helmet": {
+    "width": 1659,
+    "height": 2212,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "color": "#282828",
+    "stamp": "1794593862725.1555:459783:{}"
+  },
+  "studio/blastx-odin-bench": {
+    "width": 2212,
+    "height": 1659,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "color": "#443d36",
+    "stamp": "1794593862735.1555:429565:{}"
+  },
+  "studio/blastx-odin-handheld": {
+    "width": 2212,
+    "height": 1659,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "color": "#444444",
+    "stamp": "1794593862737.1555:496638:{}"
+  },
+  "studio/blastx-odin-printing": {
+    "width": 1659,
+    "height": 2212,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "color": "#191919",
+    "stamp": "1794593862740.1555:443013:{}"
+  },
+  "studio/ion-sheriff": {
+    "width": 1659,
+    "height": 2212,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "color": "#040404",
+    "stamp": "1794593862727.1555:400519:{}"
+  },
+  "studio/reaver-knife-side": {
+    "width": 1659,
+    "height": 2212,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "color": "#5a534c",
+    "stamp": "1794593862733.1555:509445:{}"
+  },
+  "studio/reaver-knife-top": {
+    "width": 1659,
+    "height": 2212,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "color": "#282828",
+    "stamp": "1794593862730.1555:507208:{}"
+  },
+  "walle/conops-sketch": {
+    "width": 1000,
+    "height": 614,
+    "widths": [
+      480,
+      960,
+      1000
+    ],
+    "color": "#707070",
+    "stamp": "1794593862822.1555:109095:{}"
+  },
+  "walle/energy-balance-aluminum-paint": {
+    "width": 556,
+    "height": 419,
+    "widths": [
+      480,
+      556
+    ],
+    "color": "#707070",
+    "stamp": "1794593862824.1555:20319:{}"
+  },
+  "walle/mission-patch": {
+    "width": 687,
+    "height": 745,
+    "widths": [
+      480,
+      687
+    ],
+    "color": "#040404",
+    "stamp": "1794593862820.1555:727548:{}"
+  }
+}

@@ -1,0 +1,227 @@
+@import "tailwindcss";
+
+/* Design tokens. Dark only: charcoal backgrounds, warm off-white text, one amber accent. */
+@theme {
+  --color-ink-950: #0b0d10;
+  --color-ink-900: #101317;
+  --color-ink-850: #14181d;
+  --color-ink-800: #1a1f26;
+  --color-line: #272d37;
+  --color-line-soft: #1c2129;
+  --color-paper: #e9e5dd;
+  --color-paper-dim: #bdb9b1;
+  --color-mute: #8d929b;
+  --color-accent: #f28c3a;
+  --color-accent-dim: #c9722b;
+
+  --font-display: var(--font-chakra), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --breakpoint-xs: 26rem;
+}
+
+@layer base {
+  html {
+    background: var(--color-ink-950);
+    color-scheme: dark;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-ink-950);
+    color: var(--color-paper);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-ink-950);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  a {
+    text-underline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Page gutter and max width. */
+  .shell {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 48rem) {
+    .shell {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  /* Small technical label: mono, caps, tracked. */
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-mute);
+  }
+  .label-accent {
+    color: var(--color-accent);
+  }
+
+  /* Faint blueprint grid used behind heroes. */
+  .blueprint {
+    background-image:
+      linear-gradient(to right, rgb(233 229 221 / 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(233 229 221 / 0.045) 1px, transparent 1px),
+      linear-gradient(to right, rgb(233 229 221 / 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(233 229 221 / 0.03) 1px, transparent 1px);
+    background-size:
+      120px 120px,
+      120px 120px,
+      24px 24px,
+      24px 24px;
+    mask-image: radial-gradient(ellipse 85% 75% at 60% 30%, #000 20%, transparent 78%);
+  }
+
+  /* Engineering-drawing corner ticks on framed media. */
+  .ticks {
+    position: relative;
+  }
+  .ticks::before,
+  .ticks::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .ticks::before {
+    top: -1px;
+    left: -1px;
+    border-top: 2px solid var(--color-accent);
+    border-left: 2px solid var(--color-accent);
+  }
+  .ticks::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 2px solid var(--color-accent);
+    border-right: 2px solid var(--color-accent);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    min-height: 2.9rem;
+    padding: 0.7rem 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid var(--color-line);
+    color: var(--color-paper);
+    transition:
+      background-color 0.18s,
+      border-color 0.18s,
+      color 0.18s;
+  }
+  .btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+  .btn-primary {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-ink-950);
+    font-weight: 500;
+  }
+  .btn-primary:hover {
+    background: #ffa257;
+    border-color: #ffa257;
+    color: var(--color-ink-950);
+  }
+
+  .card {
+    background: var(--color-ink-900);
+    border: 1px solid var(--color-line-soft);
+    transition:
+      border-color 0.2s,
+      transform 0.2s;
+  }
+  a.card:hover,
+  .card-hover:hover {
+    border-color: var(--color-line);
+  }
+
+  .prose-body p + p {
+    margin-top: 1rem;
+  }
+  .link {
+    color: var(--color-paper);
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent-dim);
+    text-decoration-thickness: 1px;
+    transition: color 0.15s;
+  }
+  .link:hover {
+    color: var(--color-accent);
+  }
+}
+
+/* Scroll reveal. Content is visible by default and stays visible if JS never runs.
+   components/Reveal.tsx adds .reveal-run for a one-off entrance animation; the
+   element's resting state is always its normal, visible state. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes reveal-in {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+  }
+  html.js-reveal [data-reveal].reveal-run {
+    animation: reveal-in 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Placeholder tile for cards that have no photo yet. */
+.blueprint-tile {
+  background-color: var(--color-ink-850);
+  background-image:
+    linear-gradient(to right, rgb(233 229 221 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(233 229 221 / 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
