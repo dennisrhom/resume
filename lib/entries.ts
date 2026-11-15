@@ -1,14 +1,35 @@
 import { coursework } from "@/content/coursework";
 import { projects } from "@/content/projects";
-import type { Entry } from "@/content/types";
+import type { Article, Entry, PageEntry } from "@/content/types";
 
-/** Everything with its own detail page, in display order. */
+/** Every project and coursework entry, in display order. */
 export const allEntries: Entry[] = [...projects, ...coursework];
 
-export const entriesIn = (group: Entry["group"]) => allEntries.filter((e) => e.group === group);
+export const hasPage = (e: Entry): e is PageEntry => e.page !== false;
 
-export const entryHref = (entry: Entry) => `/${entry.group}/${entry.slug}/`;
+/** Entries that have their own article at /<slug>/. */
+export const pageEntries: PageEntry[] = allEntries.filter(hasPage);
 
-/** School splits into the two résumé projects and the coursework write-ups. */
-export const schoolProjects = projects.filter((p) => p.group === "school");
-export const schoolCoursework = coursework.filter((c) => c.group === "school");
+export const entriesIn = (category: Entry["category"]) => allEntries.filter((e) => e.category === category);
+
+export const entryHref = (entry: PageEntry) => `/${entry.slug}/`;
+
+/** An entry's own page, as an article. */
+export function entryArticle(entry: PageEntry): Article {
+  return {
+    title: entry.title,
+    description: entry.summary.replace(/\*/g, ""),
+    infobox: entry.infobox,
+    lead: [
+      {
+        type: "hatnote",
+        text:
+          entry.category === "personal"
+            ? "This article is one of the [[/#Personal_projects|personal projects]] in [[/|Dennis Hom]]."
+            : "This article is one of the [[/#Academic_projects|academic projects]] in [[/|Dennis Hom]].",
+      },
+      { type: "prose", paragraphs: entry.lead },
+    ],
+    sections: entry.sections,
+  };
+}

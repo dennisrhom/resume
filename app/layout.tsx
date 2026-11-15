@@ -1,24 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Chakra_Petch, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
-import { ImageWarmup, RevealObserver } from "@/components/Reveal";
-import { SiteFooter } from "@/components/SiteFooter";
-import { SiteHeader } from "@/components/SiteHeader";
+import { PrefsSync } from "@/components/Appearance";
+import { ImageWarmup } from "@/components/ImageWarmup";
+import { MediaViewer } from "@/components/MediaViewer";
 import { site } from "@/content/site";
 import { absoluteUrl } from "@/lib/meta";
+import { defaultHtmlAttrs, prefsInlineScript } from "@/lib/prefs";
 import "./globals.css";
 
-const display = Chakra_Petch({ subsets: ["latin"], weight: ["600", "700"], variable: "--font-chakra", display: "swap" });
-const sans = IBM_Plex_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-plex-sans", display: "swap" });
-const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-plex-mono", display: "swap" });
-
 export const metadata: Metadata = {
-  title: { default: `${site.name} | ${site.role}`, template: `%s | ${site.name}` },
+  title: { default: `${site.name} - ${site.brand}`, template: `%s - ${site.brand}` },
   description: site.description,
   authors: [{ name: site.name }],
   openGraph: {
     type: "website",
-    siteName: site.name,
-    title: `${site.name} | ${site.role}`,
+    siteName: site.brand,
+    title: `${site.name} - ${site.brand}`,
     description: site.description,
     url: absoluteUrl("/"),
     images: [{ url: absoluteUrl("/og.jpg"), width: 1200, height: 630, alt: `${site.name}, ${site.role}` }],
@@ -26,7 +22,13 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", images: [absoluteUrl("/og.jpg")] },
 };
 
-export const viewport: Viewport = { themeColor: "#0b0d10", colorScheme: "dark" };
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#101418" },
+  ],
+  colorScheme: "light dark",
+};
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -41,23 +43,19 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
+    <html lang="en" {...defaultHtmlAttrs} suppressHydrationWarning>
       <head>
+        {/* Applies saved Appearance choices (text size, width, color, pinned panels) before first paint. */}
+        <script dangerouslySetInnerHTML={{ __html: prefsInlineScript }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
-      <body className="flex min-h-dvh flex-col antialiased">
-        <a
-          href="#main"
-          className="btn btn-primary sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50"
-        >
-          Skip to content
+      <body>
+        <a href="#content" className="mp-skip">
+          Jump to content
         </a>
-        <SiteHeader />
-        <main id="main" className="flex-1">
-          {children}
-        </main>
-        <SiteFooter />
-        <RevealObserver />
+        {children}
+        <MediaViewer />
+        <PrefsSync />
         <ImageWarmup />
       </body>
     </html>

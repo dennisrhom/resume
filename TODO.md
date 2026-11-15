@@ -1,29 +1,33 @@
 # Open items
 
-Things that could not be built from the uploaded material, or that need your call.
-Each one also has a `TODO(...)` comment at the exact spot in `content/`.
+Things that still need material or a decision. Each one also has a `TODO(...)` comment at the exact spot in `content/`.
 
-## Missing files
+## Waiting on you
 
-- **`BlastXPhantom_Shooting_Video.MP4`**: not in the upload (chat attachments cannot carry video). The case study has a video slot that stays hidden until you add it. Steps are in the README under "Add the firing video".
-- **`UT_ResumeSitePulled/`**: not in the upload. Nothing on the site depends on it.
-- **Original full-resolution photos**: the uploaded copies were downscaled to about 2,200 px on the long side. That is plenty for the web. Drop originals in `media-src/` only if you want to re-crop.
+- **Photo of yourself**: the infobox on the main article has an empty space reserved for it. Steps are in the README under "Your photo in the infobox".
+- **Résumé PDF**: removed from the site. Send a redacted version and it can be linked under External links.
+- **Gaming social links**: add them to `gaming.links` in `content/hobbies.ts` and they show under Hobbies > Gaming.
+- **Footnotes**: none yet. Planned for a later pass.
+- **`BlastXPhantom_Shooting_Video.MP4`**: not in the upload. The Phantom article has a video slot that stays hidden until you add it. Steps are in the README under "Add the firing video".
+- **Share image**: `public/og.jpg` still uses the old dark design. Rebuild it with `npm run og` after updating `scripts/build-og.mjs` if you want it to match.
 
 ## Content gaps
 
-- **Home Chicken Coop**: no photos, and no detail beyond the two résumé bullets (valve mechanism, materials, reservoir size).
+- **Home Chicken Coop**: summary only on the main article, with no page of its own. No photos, and no detail beyond the two résumé bullets (valve mechanism, materials, reservoir size).
 - **NASA USDC-9**: results of the 3-substrate absorption tests are on the résumé but not in the final report. Also to add: FMEA, test cases, CAD renders of the rig.
-- **Mercor**: job title is not on the résumé. Listed by name under AI Training & Evaluation with May 2025 to present.
 
-## Decisions for you
+## Decisions made
 
-- **Propeller project vs. résumé**: the résumé says 3 propeller twists, 12+ LabVIEW trials, and pitches of 5.0 to 6.5 degrees. The final report documents 2 propellers (APC 6x6E and 6x5.5E, pitch in inches) and 2 trials. The site follows the report. Update one or the other so they agree.
-- **Part count**: the résumé says "60+ part" assembly; the work sample says 74 printed parts, 14 internal. The site uses 74 and 14.
-- **GPA**: the site shows 3.56. The résumé PDF still says 3.6.
-- **Résumé PDF**: `public/dennis-hom-resume.pdf` is your résumé with the phone number removed and the contact line re-centered. Swap in your own export if you prefer.
+- **Propeller project**: the infobox, lead, and main-article summary use the résumé numbers (3 twists, 12+ LabVIEW trials, 5.0–6.5° pitch). The results table still comes from the final report (2 propellers, 2 trials) and is labeled "Results from two of the trials". Add the other runs if you have them.
+- **Part count**: 74 printed parts, 14 internal or moving.
+- **GPA**: 3.56 (the résumé PDF still says 3.6).
+- **AI training**: Handshake AI and Mercor are one entry, "AI training", under Experience.
+- **Texas eSports**: lives under Experience; Education and Hobbies > Gaming link to it.
+- **Coursework projects**: summarized under Projects > Academic projects; Education > Coursework links there.
+- **Old URLs**: the earlier section pages (`/home/`, `/school/`, `/work/`, `/leadership/`, `/fun/`, `/about/`) and their forwards were removed. Project articles moved to `/<slug>/`.
+
+## Still open from the reports
+
 - **WALL-E**: delta-v budget, propellant split, link budget, and margin percentage are left off because those numbers disagree inside the report.
 - **USDC-9**: flow rate and cumulative uptake figures are left off (arithmetic slip in the report).
-- **Voice**: all copy was rewritten in a casual first-person voice with the facts and numbers unchanged. The About bio, the Texas eSports intro, and the one-line section intros are my wording from résumé facts. Edit anything that does not sound like you in `content/`.
-- **"Home" in the nav** goes to Things I did at home (`/home/`); the logo goes to the landing page. If you would rather "Home" mean the landing page, change `sections.home.nav` in `content/site.ts`.
-- **Engineering Honors**: the academic summary lists your major as "Aerospace Engineering / Engineering Honors". The résumé does not mention honors, so the site does not either.
 - **Site URL**: `content/site.ts` assumes `https://dennisrhom.github.io/resume`. Set `NEXT_PUBLIC_SITE_URL` if you deploy elsewhere.
